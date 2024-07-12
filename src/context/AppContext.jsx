@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { getStays } from "../service/Api.jsx";
 
 const AppContext = createContext();
 
@@ -12,6 +13,7 @@ export const AppProvider = ({ children }) => {
         const fetchData = async () => {
             try {
                 const staysData = await getStays();
+                console.log('Fetched Stays Data:', staysData); // Log des données récupérées
                 setStaysData(staysData);
                 const medicinesData = await getMedicines(prescriptionId);
                 setMedicinesData(medicinesData);
