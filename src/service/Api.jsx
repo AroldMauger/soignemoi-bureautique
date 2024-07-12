@@ -30,5 +30,5 @@ export const loginSecretary = async (email, password) => {
     }
   
     const data = await response.json();
-    return data.body; // On retourne uniquement le body qui contient le token
-  };
+    return data.csrf_token; // On retourne uniquement le token CSRF
+};

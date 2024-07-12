@@ -1,0 +1,25 @@
+.dashboard-subcontainer {
+    padding: 2rem;
+}
+
+.endedstay_title_container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #36D2A7;
+
+}
+
+.endedstay_title {
+    margin: 0px;
+    color: white;
+    font-family: Noto Sans;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    padding: 20px;
+}

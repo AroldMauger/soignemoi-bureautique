@@ -5,7 +5,6 @@ import { AppProvider } from './context/AppContext.jsx';
 import Login from './components/Login/Login.jsx';
 import NotFound404 from './components/NotFound404/NotFound404.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
-import Guard from './components/Guard/Guard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,15 +15,10 @@ const router = createBrowserRouter([
         element: <Login/>
       },
       {
-        path: "/",
-        children :[
-          {
-            path: "/dashboard",
-            element: <Dashboard/>
-          }
-        ],
-        element: <Guard/>  // permet de sécuriser les routes privées
+        path: "/dashboard",
+        element: <Dashboard/>
       },
+
     ],
   },
 ]);
