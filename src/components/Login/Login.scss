@@ -1,0 +1,83 @@
+
+body {
+    background-color: #0083BD;
+    font-family: Noto Sans;
+}
+
+.login-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+.input-container {
+    width: 100%;
+}
+.sign-in-button {
+    width:50%;
+    height: 40px;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    border-color: grey;
+    background-color: #FFA95C;
+    color: black;
+  }
+
+  .sign-in-button:hover {
+    cursor: pointer;
+    background-color: #B0F9C0;
+  }
+  
+  .sign-in-content {
+    box-sizing: border-box;
+    background-color: white;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding-inline: 4rem;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+
+  }
+  
+  .sign-in-icon {
+    font-size: 5rem;
+  }
+  
+  
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .input-wrapper label {
+    font-weight: bold;
+  }
+  
+  .input-wrapper input {
+    padding: 5px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #D9D9D9;
+    font-weight: bold;
+  }
+  
+  
+  
