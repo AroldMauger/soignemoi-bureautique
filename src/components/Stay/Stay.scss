@@ -1,0 +1,39 @@
+
+.rdv-card_container {
+    padding: 2rem;
+    border-radius: 0.8rem;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.rdv-patient {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0083BD;
+}
+
+.rdv-card {
+    padding-top: 2rem;
+    font-size: larger;
+}
+
+.rdv-card p {
+    margin:0px;
+    padding-block: 2px;
+}
+
+.rdv-button-dossier {
+    border: none;
+    background-color: #FF6000;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    margin-top: 2rem;
+}
+
+.rdv-button-dossier:hover {
+    cursor: pointer;
+    background-color: #36D2A7;
+}
