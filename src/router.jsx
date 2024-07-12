@@ -5,6 +5,7 @@ import { AppProvider } from './context/AppContext.jsx';
 import Login from './components/Login/Login.jsx';
 import NotFound404 from './components/NotFound404/NotFound404.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
+import StayModal from './components/StayModal/StayModal.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,10 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard/>
       },
-
+      {
+        path: "/dashboard/stays/:id",
+        element: <StayModal/>
+      },
     ],
   },
 ]);

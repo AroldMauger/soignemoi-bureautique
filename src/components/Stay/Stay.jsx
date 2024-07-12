@@ -1,7 +1,8 @@
 import React from 'react';
 import './Stay.scss';
+import { Link } from 'react-router-dom';
 
-function Stay({ entrydate, leavingdate, patientfirstname, patientlastname }) {
+function Stay({ entrydate, leavingdate, patientfirstname, patientlastname, id }) {
     // Convertir les dates en objets Date
     const entryDateObj = new Date(entrydate);
     const leavingDateObj = new Date(leavingdate);
@@ -32,7 +33,19 @@ function Stay({ entrydate, leavingdate, patientfirstname, patientlastname }) {
                     <p> <strong>Sortie</strong></p>
                     <p>{formattedLeavingDate}</p>
                 </div>
-                <button className="rdv-button-dossier">DOSSIER PATIENT</button>
+                <div className='container-for-btns'>
+                    <Link
+                        to={`/dashboard/stays/${id}`}
+                    >
+                        <button className="rdv-button-dossier">DOSSIER PATIENT</button>
+                    </Link>
+                    <Link
+                        to={`/dashboard/stays/${id}`}
+                    >
+                    <button className="rdv-button-finish">FIN DU SÉJOUR</button>
+                    </Link>
+                </div>
+               
             </div>
         </div>
     );

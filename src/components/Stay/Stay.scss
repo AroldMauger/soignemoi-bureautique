@@ -1,6 +1,8 @@
 
 .rdv-card_container {
-    padding: 2rem;
+    padding-block: 2rem;
+    padding-inline: 3rem;
+
     border-radius: 0.8rem;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -13,8 +15,7 @@
 }
 
 .rdv-card {
-    padding-top: 2rem;
-    font-size: larger;
+    font-size: 1.2rem;
 }
 
 .rdv-card p {
@@ -22,12 +23,12 @@
     padding-block: 2px;
 }
 
-.rdv-button-dossier {
+.rdv-button-dossier, .rdv-button-finish {
     border: none;
     background-color: #FF6000;
     color: #fff;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 14px;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: 0.8rem;
     margin-top: 2rem;
@@ -36,4 +37,17 @@
 .rdv-button-dossier:hover {
     cursor: pointer;
     background-color: #36D2A7;
+}
+
+
+.rdv-button-finish:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.container-for-btns a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
 }

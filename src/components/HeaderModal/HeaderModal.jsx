@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import "./Header.scss";
+import { NavLink, useNavigate } from 'react-router-dom';
+import "./HeaderModal.scss";
 
-function Header() {
+function HeaderModal() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -16,9 +16,10 @@ function Header() {
     return (
         <div className='header-dashboard'>
             <img className="logo_main" src="/logo-soignemoi.png" alt="Logo SoigneMoi"/>
+            <NavLink to="/dashboard">Tableau de bord</NavLink>
             <a onClick={handleLogout} style={{ cursor: 'pointer' }}>Déconnexion</a>
         </div>
     );
 }
 
-export default Header;
+export default HeaderModal;

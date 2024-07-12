@@ -1,0 +1,42 @@
+
+body {
+    font-family: Noto Sans;
+    margin: 0px;
+}
+
+.header-dashboard {
+    display: flex;
+    height: 10%;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0083BD;
+    color: #fff;
+}
+
+.logo_main {
+    padding-top: 5px;
+    width: 10%;
+}
+
+.header_in_mainpage a {
+    cursor: pointer;
+}
+
+
+.header-dashboard a{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding: 1rem 1rem;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.header-dashboard a:hover {
+    background-color: #9CF89E;
+    cursor: pointer;
+}

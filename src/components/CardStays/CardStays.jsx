@@ -21,6 +21,7 @@ function CardStays() {
                     leavingdate={stay.leavingdate}
                     patientfirstname={stay.user.firstname}
                     patientlastname={stay.user.lastname}
+                    id={stay.id}
                 />
             ))}
         </div>

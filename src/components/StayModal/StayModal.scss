@@ -1,0 +1,49 @@
+.stay-modal {
+    background-color: white;
+}
+
+.opinion {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    background-color: #D9D9D9;
+    gap:1rem;
+}
+
+.opinion-subcontainer-date {
+    border-right: 2px solid black;
+    margin: 0px;
+    padding:1.2rem;
+    font-weight: 800;
+}
+
+.opinion-subcontainer {
+    margin: 0px;
+    padding:1.2rem;
+}
+
+.prescriptions-container {
+    margin: 20px;
+}
+
+.prescriptions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.prescriptions-table th, .prescriptions-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.prescriptions-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.prescriptions-table td {
+    background-color: #f9f9f9;
+}
