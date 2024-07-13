@@ -1,5 +1,5 @@
 export const getStays = async () => {
-    const csrfToken = localStorage.getItem('csrf_token'); // Récupère le token CSRF depuis le localStorage
+    const csrfToken = sessionStorage.getItem('csrf_token'); // Récupère le token CSRF depuis le localStorage
 
     const response = await fetch('http://localhost:8000/api/stays', {
         method: 'GET',
@@ -39,7 +39,21 @@ export const loginSecretary = async (email, password) => {
 
 
 
-const getMedicines = async (prescriptionId) =>  {
-    return fetch(`http://localhost:8000/api/prescriptions/${prescriptionId}/medicines`) 
-    .then((response) => response.json())
-}
+export const finishStay = async (stayId) => {
+  const csrfToken = sessionStorage.getItem('csrf_token'); 
+
+  const response = await fetch(`http://localhost:8000/api/stays/${stayId}/finish`, {
+      method: 'PATCH',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': csrfToken ? `Bearer ${csrfToken}` : '',  
+      },
+  });
+
+  if (!response.ok) {
+      throw new Error(`Failed to finish stay. Status: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data;
+};

@@ -12,9 +12,25 @@ function CardStays() {
         }
     }, [staysData]);
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Normaliser aujourd'hui à 00:00:00
+
+    const filteredStays = staysData
+        ? staysData
+            .filter(stay => stay.status !== 'terminé') // Filtrer les séjours terminés
+            .filter(stay => {
+                const entryDate = new Date(stay.entrydate);
+                const leavingDate = new Date(stay.leavingdate);
+                entryDate.setHours(0, 0, 0, 0);
+                leavingDate.setHours(0, 0, 0, 0);
+                return entryDate.getTime() === today.getTime() || leavingDate.getTime() === today.getTime() || (entryDate < today && leavingDate >= today);
+            }) // Filtrer les séjours du jour ou en cours
+            .sort((a, b) => new Date(a.entrydate) - new Date(b.entrydate)) // Trier les séjours par date d'entrée
+        : [];
+
     return (
         <div className="all-cards_container">
-            {staysData && staysData.map((stay) => (
+            {filteredStays.map((stay) => (
                 <Stay
                     key={stay.id}
                     entrydate={stay.entrydate}

@@ -26,6 +26,7 @@ export const AppProvider = ({ children }) => {
 
     const contextValue = {
         staysData,
+        setStaysData,
         medicinesData,
         error
     };

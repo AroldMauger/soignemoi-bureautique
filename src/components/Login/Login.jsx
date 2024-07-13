@@ -10,7 +10,7 @@ function Login() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem('csrf_token');
+        const token = sessionStorage.getItem('csrf_token');
         if (token) {
             navigate('/dashboard');
         }
@@ -20,8 +20,8 @@ function Login() {
         event.preventDefault();
         try {
             const csrfToken = await loginSecretary(email, password);
-            // Stockez le token ou toute autre donnée pertinente dans le localStorage
-            localStorage.setItem('csrf_token', csrfToken); // Exemple de stockage du token
+            // Stockez le token ou toute autre donnée pertinente dans le SessionStorage
+            sessionStorage.setItem('csrf_token', csrfToken); // Exemple de stockage du token
             console.log('CSRF Token:', csrfToken); // Log du token récupéré
             if (csrfToken) {
                 navigate('/dashboard'); // Redirection vers le Dashboard après connexion réussie
