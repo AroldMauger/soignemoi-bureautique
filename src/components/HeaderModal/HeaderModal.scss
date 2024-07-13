@@ -40,3 +40,9 @@ body {
     background-color: #9CF89E;
     cursor: pointer;
 }
+
+.nav-header-modal {
+    display: flex;
+    flex-direction: row;
+    gap:100px;
+}

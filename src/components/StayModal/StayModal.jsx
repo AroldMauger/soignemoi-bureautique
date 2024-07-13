@@ -40,54 +40,75 @@ function StayModal() {
         return `${day}/${month}/${year}`;
     };
 
+    // Trier les avis par date en ordre croissant
+    const sortedOpinions = stay.opinions
+        ? stay.opinions.sort((a, b) => new Date(a.date.date) - new Date(b.date.date))
+        : [];
+
     return (
         <div className="stay-modal">
-            <HeaderModal/>
-            <div className='modal-subcontainer'>
-                <h2>Informations personnelles</h2>
-                <p><strong>Nom :</strong> {stay.user.firstname} {stay.user.lastname}</p>
-                <p><strong>Adresse :</strong> {stay.user.address}</p>
-                <p><strong>Email :</strong> {stay.user.email}</p>
-            </div>
-            <div className='modal-subcontainer'>
-                <h2>Séjour à l'hôpital</h2>
-                <p><strong>Entrée :</strong> {formatDateTime(stay.entrydate)}</p>
-                <p><strong>Sortie :</strong> {formatDateTime(stay.leavingdate)}</p>
-                <p><strong>Motif :</strong> {stay.reason.name}</p>
-                <p><strong>Médecin :</strong> Docteur {stay.doctor.name}, {stay.speciality.name}</p>
-            </div>
-            <div className="opinions">
-                {stay.opinions && stay.opinions.map((opinion, index) => (
-                    <div key={index} className="opinion">
-                        <p className='opinion-subcontainer-date'>AVIS du {formatDate(opinion.date.date)}</p>
-                        <p className='opinion-subcontainer'>{opinion.comment}</p>
-                    </div>
-                ))}
-            </div>
-
-            <h3>PRESCRIPTIONS du médecin</h3>
-            <table className="prescriptions-table">
-                <thead>
-                    <tr>
-                        <th>MÉDICAMENTS</th>
-                        <th>POSOLOGIE</th>
-                        <th>DÉBUT DU TRAITEMENT</th>
-                        <th>FIN DU TRAITEMENT</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {stay.prescriptions && stay.prescriptions.map((prescription, index) => (
-                        prescription.medicines.map((medicine, medIndex) => (
-                            <tr key={`${index}-${medIndex}`}>
-                                <td>{medicine.name}</td>
-                                <td>{medicine.dosage}</td>
-                                <td>{formatDate(medicine.start_date.date)}</td>
-                                <td>{formatDate(medicine.end_date.date)}</td>
-                            </tr>
+            <HeaderModal />
+            <div className='modal-main-container'>
+                <div className='modal-subcontainer'>
+                    <h2>Informations personnelles</h2>
+                    <p><strong>Nom :</strong> {stay.user.firstname} {stay.user.lastname}</p>
+                    <p><strong>Adresse :</strong> {stay.user.address}</p>
+                    <p><strong>Email :</strong> {stay.user.email}</p>
+                </div>
+                <div className='modal-subcontainer'>
+                    <h2>Séjour à l'hôpital</h2>
+                    <p><strong>Entrée :</strong> {formatDateTime(stay.entrydate)}</p>
+                    <p><strong>Sortie :</strong> {formatDateTime(stay.leavingdate)}</p>
+                    <p><strong>Motif :</strong> {stay.reason.name}</p>
+                    <p><strong>Médecin :</strong> Docteur {stay.doctor.name}, {stay.speciality.name}</p>
+                </div>
+                <div className="opinions">
+                    {sortedOpinions.length > 0 ? (
+                        sortedOpinions.map((opinion, index) => (
+                            <div key={index} className="opinion">
+                                <p className='opinion-subcontainer-date'>AVIS du {formatDate(opinion.date.date)}</p>
+                                <p className='opinion-subcontainer'>{opinion.comment}</p>
+                            </div>
                         ))
-                    ))}
-                </tbody>
-            </table>
+                    ) : (
+                        <p>Aucun avis disponible.</p>
+                    )}
+                </div>
+
+                {stay.prescriptions ? (
+                    stay.prescriptions.length > 0 ? (
+                        <>
+                            <h3>PRESCRIPTIONS du médecin</h3>
+                            <table className="prescriptions-table">
+                                <thead>
+                                    <tr>
+                                        <th>MÉDICAMENTS</th>
+                                        <th>POSOLOGIE</th>
+                                        <th>DÉBUT DU TRAITEMENT</th>
+                                        <th>FIN DU TRAITEMENT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {stay.prescriptions.map((prescription, index) => (
+                                        prescription.medicines.map((medicine, medIndex) => (
+                                            <tr key={`${index}-${medIndex}`}>
+                                                <td>{medicine.name}</td>
+                                                <td>{medicine.dosage}</td>
+                                                <td>{formatDate(medicine.start_date.date)}</td>
+                                                <td>{formatDate(medicine.end_date.date)}</td>
+                                            </tr>
+                                        ))
+                                    ))}
+                                </tbody>
+                            </table>
+                        </>
+                    ) : (
+                        <h3>Pas de prescriptions pour le moment</h3>
+                    )
+                ) : (
+                    <h3>Pas de prescriptions pour le moment</h3>
+                )}
+            </div>
         </div>
     );
 }

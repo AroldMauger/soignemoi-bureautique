@@ -8,7 +8,7 @@ function HeaderModal() {
     const handleLogout = () => {
         const confirmed = window.confirm("Êtes-vous sûr de vouloir vous déconnecter?");
         if (confirmed) {
-            localStorage.clear(); // Nettoyage du localStorage
+            sessionStorage.clear(); // Nettoyage du localStorage
             navigate('/'); // Redirection vers la page de connexion
         }
     };
@@ -16,8 +16,11 @@ function HeaderModal() {
     return (
         <div className='header-dashboard'>
             <img className="logo_main" src="/logo-soignemoi.png" alt="Logo SoigneMoi"/>
-            <NavLink to="/dashboard">Tableau de bord</NavLink>
-            <a onClick={handleLogout} style={{ cursor: 'pointer' }}>Déconnexion</a>
+            <nav className='nav-header-modal'>
+                <NavLink to="/dashboard">Tableau de bord</NavLink>
+                <a onClick={handleLogout} style={{ cursor: 'pointer' }}>Déconnexion</a>
+            </nav>
+    
         </div>
     );
 }

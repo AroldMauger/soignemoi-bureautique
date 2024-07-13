@@ -8,7 +8,7 @@ function Header() {
     const handleLogout = () => {
         const confirmed = window.confirm("Êtes-vous sûr de vouloir vous déconnecter?");
         if (confirmed) {
-            localStorage.clear(); // Nettoyage du localStorage
+            sessionStorage.clear(); // Nettoyage du localStorage
             navigate('/'); // Redirection vers la page de connexion
         }
     };

@@ -1,11 +1,19 @@
 
+.stay {
+    min-width:280px;
+}
+
 .rdv-card_container {
     padding-block: 2rem;
-    padding-inline: 3rem;
-
     border-radius: 0.8rem;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 2rem;
 }
 
 .rdv-patient {
@@ -28,10 +36,12 @@
     background-color: #FF6000;
     color: #fff;
     padding: 14px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     border-radius: 0.8rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    min-width: 180px;
+
 }
 
 .rdv-button-dossier:hover {
@@ -45,9 +55,15 @@
     background-color: red;
 }
 
-.container-for-btns a {
+.container-for-btns {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-decoration: none;
+    width: 80%;
+}
+
+.info-container-card {
+    width: 100%;
 }

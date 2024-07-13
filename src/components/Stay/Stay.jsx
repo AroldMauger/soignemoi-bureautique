@@ -48,39 +48,42 @@ function Stay({ entrydate, leavingdate, patientfirstname, patientlastname, id })
     return (
         <div className="stay">
             <div className="rdv-card_container">
-                <span className="rdv-patient">{patientfirstname} {patientlastname}</span>
-                <div className="rdv-card">
-                    {/* Cas 1 : Affiche Entrée et Sortie */}
-                    {isEntryDateToday && isLeavingDateToday && (
-                        <>
-                            <p><strong>Entrée</strong></p>
-                            <p>{formattedEntryDate}</p>
-                            <p><strong>Sortie</strong></p>
-                            <p>{formattedLeavingDate}</p>
-                        </>
-                    )}
-                    {/* Cas 2 : Affiche uniquement Sortie */}
-                    {!isEntryDateToday && isLeavingDateToday && (
-                        <>
-                            <p><strong>Sortie</strong></p>
-                            <p>{formattedLeavingDate}</p>
-                        </>
-                    )}
-                    {/* Cas 3 : Affiche uniquement Entrée */}
-                    {isEntryDateToday && !isLeavingDateToday && (
-                        <>
-                            <p><strong>Entrée</strong></p>
-                            <p>{formattedEntryDate}</p>
-                        </>
-                    )}
-                    {/* Cas 4 : Séjour en cours */}
-                    {isOngoingStay && !isEntryDateToday && !isLeavingDateToday && (
-                        <>
-                            <p><strong>Entrée</strong></p>
-                            <p>{formattedEntryDate}</p>
-                        </>
-                    )}
+                <div className='info-container-card'>
+                    <span className="rdv-patient">{patientfirstname} {patientlastname}</span>
+                    <div className="rdv-card">
+                        {/* Cas 1 : Affiche Entrée et Sortie */}
+                        {isEntryDateToday && isLeavingDateToday && (
+                            <>
+                                <p><strong>Entrée</strong></p>
+                                <p>{formattedEntryDate}</p>
+                                <p><strong>Sortie</strong></p>
+                                <p>{formattedLeavingDate}</p>
+                            </>
+                        )}
+                        {/* Cas 2 : Affiche uniquement Sortie */}
+                        {!isEntryDateToday && isLeavingDateToday && (
+                            <>
+                                <p><strong>Sortie</strong></p>
+                                <p>{formattedLeavingDate}</p>
+                            </>
+                        )}
+                        {/* Cas 3 : Affiche uniquement Entrée */}
+                        {isEntryDateToday && !isLeavingDateToday && (
+                            <>
+                                <p><strong>Entrée</strong></p>
+                                <p>{formattedEntryDate}</p>
+                            </>
+                        )}
+                        {/* Cas 4 : Séjour en cours */}
+                        {isOngoingStay && !isEntryDateToday && !isLeavingDateToday && (
+                            <>
+                                <p><strong>Entrée</strong></p>
+                                <p>{formattedEntryDate}</p>
+                            </>
+                        )}
+                    </div>
                 </div>
+                
                 <div className='container-for-btns'>
                     <Link to={`/dashboard/stays/${id}`}>
                         <button className="rdv-button-dossier">DOSSIER PATIENT</button>
