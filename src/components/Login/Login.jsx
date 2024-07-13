@@ -33,7 +33,7 @@ function Login() {
 
     return (
         <div className='login-main-container'>
-            <img src="logo-soignemoi.png" alt="logo"/>
+            <img className="logo-in-login" src="logo-soignemoi.png" alt="logo"/>
             <section className="sign-in-content">
                 <i className="fa fa-user-circle sign-in-icon"></i>
                 <h1>Identifiants secrétaire :</h1>
