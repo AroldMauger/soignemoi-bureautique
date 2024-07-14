@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-14T15:52:03.400Z",
+    "end": "2024-07-14T15:52:06.429Z",
+    "duration": 3029,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fbb9322d-5571-4fb7-ae60-aeaba97133be",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8fea5d33-91f1-484d-8ed5-6cdee9572a53",
+          "title": "Login Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully log in with correct credentials",
+              "fullTitle": "Login Functionality should successfully log in with correct credentials",
+              "timedOut": null,
+              "duration": 1835,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('input[id=\"username\"]').should('be.visible').type('secretary@soignemoi.fr');\ncy.get('input[id=\"password\"]').should('be.visible').type('test');\ncy.get('button[type=\"submit\"]').should('be.visible').click();\ncy.url().should('include', '/dashboard');",
+              "err": {},
+              "uuid": "f50cc2e9-f598-485c-a4d2-12e79aed20e0",
+              "parentUUID": "8fea5d33-91f1-484d-8ed5-6cdee9572a53",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error message on failed login",
+              "fullTitle": "Login Functionality should show error message on failed login",
+              "timedOut": null,
+              "duration": 995,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('input[id=\"username\"]').should('be.visible').type('wrong@example.com');\ncy.get('input[id=\"password\"]').should('be.visible').type('wrongpassword');\ncy.get('button[type=\"submit\"]').should('be.visible').click();\ncy.contains('Connexion failed').should('be.visible');",
+              "err": {},
+              "uuid": "2f86ba41-76f7-4ccb-89f9-3903136e8d84",
+              "parentUUID": "8fea5d33-91f1-484d-8ed5-6cdee9572a53",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should redirect to /dashboard if csrf_token exists in sessionStorage",
+              "fullTitle": "Login Functionality should redirect to /dashboard if csrf_token exists in sessionStorage",
+              "timedOut": null,
+              "duration": 131,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Simulez l'existence du token CSRF dans le stockage de session\nsessionStorage.setItem('csrf_token', 'mock-csrf-token');\ncy.visit('/'); // L'URL de la page de connexion doit être correcte\ncy.url().should('include', '/dashboard'); // Vérifiez que la redirection se fait correctement",
+              "err": {},
+              "uuid": "3b7bca47-5038-4225-b043-4084503654b5",
+              "parentUUID": "8fea5d33-91f1-484d-8ed5-6cdee9572a53",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f50cc2e9-f598-485c-a4d2-12e79aed20e0",
+            "2f86ba41-76f7-4ccb-89f9-3903136e8d84",
+            "3b7bca47-5038-4225-b043-4084503654b5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2961,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
