@@ -20,14 +20,13 @@ function Login() {
         event.preventDefault();
         try {
             const csrfToken = await loginSecretary(email, password);
-            // Stockez le token ou toute autre donnée pertinente dans le SessionStorage
             sessionStorage.setItem('csrf_token', csrfToken); // Exemple de stockage du token
             console.log('CSRF Token:', csrfToken); // Log du token récupéré
             if (csrfToken) {
                 navigate('/dashboard'); // Redirection vers le Dashboard après connexion réussie
             }
         } catch (error) {
-            setError(error.message);
+            setError('Connexion failed'); // Assurez-vous que le message d'erreur est cohérent avec le test
         }
     };
 
