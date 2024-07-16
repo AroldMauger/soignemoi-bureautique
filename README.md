@@ -11,7 +11,7 @@ Le projet a été réalisé avec les technologies suivantes :
 - Vite (version 5.3.1)
 - Tauri (version 1.6.0)
 - React (version 18.3)
-- Appel au backend Symfony de l'application web (https://github.com/AroldMauger/soignemoi-web.git)
+- Appel au backend Symfony de l'application web (https://soignemoi.alwaysdata.net/)
 - SASS
 - JavaScript
 - Jest et Cypress pour les tests

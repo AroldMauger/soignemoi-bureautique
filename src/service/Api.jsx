@@ -1,7 +1,7 @@
 export const getStays = async () => {
     const csrfToken = sessionStorage.getItem('csrf_token'); // Récupère le token CSRF depuis le localStorage
 
-    const response = await fetch('http://localhost:8000/api/stays', {
+    const response = await fetch('https://soignemoi.alwaysdata.net/api/stays', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ export const getStays = async () => {
 //Appel à l'API pour la connexion
 
 export const loginSecretary = async (email, password) => {
-    const response = await fetch(`http://localhost:8000/api/secretary/login`, {
+    const response = await fetch(`https://soignemoi.alwaysdata.net/api/secretary/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const loginSecretary = async (email, password) => {
 export const finishStay = async (stayId) => {
   const csrfToken = sessionStorage.getItem('csrf_token'); 
 
-  const response = await fetch(`http://localhost:8000/api/stays/${stayId}/finish`, {
+  const response = await fetch(`https://soignemoi.alwaysdata.net/api/stays/${stayId}/finish`, {
       method: 'PATCH',
       headers: {
           'Content-Type': 'application/json',
