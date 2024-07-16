@@ -4,7 +4,7 @@
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:3000",
-    "distDir": "../build"
+    "distDir": "../dist"
   },
   "package": {
     "productName": "soignemoi-bureautique",
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.soignemoi.client",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -55,11 +55,9 @@
     },
     "windows": [
       {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "soignemoi-bureautique",
-        "width": 800
+        "fullscreen": true,
+        "resizable": false,
+        "title": "soignemoi-bureautique"
       }
     ]
   }
