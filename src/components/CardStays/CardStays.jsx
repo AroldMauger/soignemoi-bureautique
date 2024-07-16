@@ -12,18 +12,24 @@ function CardStays() {
         }
     }, [staysData]);
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // Normaliser aujourd'hui à 00:00:00
+    // Fonction pour formater une date au format JJ/MM/AAAA
+    const formatDate = (date) => {
+        const d = new Date(date);
+        const day = (`0${d.getDate()}`).slice(-2);
+        const month = (`0${d.getMonth() + 1}`).slice(-2);
+        const year = d.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
+
+    const today = formatDate(new Date());
 
     const filteredStays = staysData
         ? staysData
             .filter(stay => stay.status !== 'terminé') // Filtrer les séjours terminés
             .filter(stay => {
-                const entryDate = new Date(stay.entrydate);
-                const leavingDate = new Date(stay.leavingdate);
-                entryDate.setHours(0, 0, 0, 0);
-                leavingDate.setHours(0, 0, 0, 0);
-                return entryDate.getTime() === today.getTime() || leavingDate.getTime() === today.getTime() || (entryDate < today && leavingDate >= today);
+                const entryDate = formatDate(stay.entrydate);
+                const leavingDate = formatDate(stay.leavingdate);
+                return entryDate === today || leavingDate === today ;
             }) // Filtrer les séjours du jour ou en cours
             .sort((a, b) => new Date(a.entrydate) - new Date(b.entrydate)) // Trier les séjours par date d'entrée
         : [];
