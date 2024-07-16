@@ -55,9 +55,11 @@
     },
     "windows": [
       {
-        "fullscreen": true,
+        "fullscreen": false,
+        "height": 720,
         "resizable": false,
-        "title": "soignemoi-bureautique"
+        "title": "soignemoi-bureautique",
+        "width": 1280
       }
     ]
   }
