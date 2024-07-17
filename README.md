@@ -9,7 +9,7 @@ Le fichier d'installation peut être téléchargé depuis GitHub en suivant le l
 1. Rendez-vous à l'adresse : https://github.com/AroldMauger/soignemoi-bureautique/releases/tag/0.1
 2. Choisissez le fichier d'installation soignemoi-bureautique_0.1.0_x64-setup.exe
 3. Ouvrez le fichier depuis le dossier des téléchargements de votre ordinateur
-4. Si Windows cherche a vous protégé contre l'installation d'une application non reconnue, cliquez sur "Informations complémentaires" et/ou "Exécuter quand même".
+4. Si Windows cherche à vous protéger contre l'installation d'une application non reconnue, cliquez sur "Informations complémentaires" et/ou "Exécuter quand même".
 5. Suivez les étapes de l'installation et lancez l'application.
 6. Pour vous connecter en tant que secrétaire, utilisez les identifiants suivants :
 - Email : secretary@soignemoi.fr
